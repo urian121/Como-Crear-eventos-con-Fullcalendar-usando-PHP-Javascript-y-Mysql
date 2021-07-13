@@ -1,60 +1,81 @@
-html, body {
-  margin: 50px 10px;
-  padding: 0;
-  font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 14px;
-}
-
 #calendar {
   max-width: 900px;
   margin: 0 auto;
 }
-
-.zmdi-close {
-  color: red;
-  font-size: 20px !important;
-  padding: 10px;
-}
-.zmdi-close:hover{
-    cursor: pointer;
-    color: black;
-}
-.fc-title{
-    color: #fff;
+.closeon {
+  border-radius: 5px;
 }
 
 
-button {
-  border-radius: 20px;
-  padding: 20px;
-  margin: 5px;
-  border: none;
+
+/****************/
+input {
+  display: none;
 }
 
-.azul{
-  background-color: #4285f4;
+.button {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
 }
-.verde{
-  background-color: #0f9d58;
+
+.button span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background: #eeeeee;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: ease .3s;
 }
-.danger{
-  background-color: #f44336;
+
+.button span:hover {
+  padding: 10px !important;
 }
-.pulpe{
-  background-color: #9c27b0;
+
+.orange .button span {
+  background: #FF5722;
 }
-.pinker{
-  background-color: #e91e63;
+
+.amber .button span {
+  background: #FFC107;
 }
-.orange{
-  background-color: #ff9800;
+
+.lime .button span {
+  background: #8BC34A;
 }
-.blue{
-  background-color: #03a9f4;
+
+.teal .button span {
+  background: #009688;
 }
-.black{
-  background-color:black;
+
+.blue .button span {
+  background: #2196F3;
 }
-.yellow{
-  background-color: #ffeb3b;
+
+.indigo .button span {
+  background: #3F51B5;
+}
+
+.layer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  /*transition: ease .3s;*/
+  z-index: -1;
 }
