@@ -1,0 +1,60 @@
+html, body {
+  margin: 50px 10px;
+  padding: 0;
+  font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.zmdi-close {
+  color: red;
+  font-size: 20px !important;
+  padding: 10px;
+}
+.zmdi-close:hover{
+    cursor: pointer;
+    color: black;
+}
+.fc-title{
+    color: #fff;
+}
+
+
+button {
+  border-radius: 20px;
+  padding: 20px;
+  margin: 5px;
+  border: none;
+}
+
+.azul{
+  background-color: #4285f4;
+}
+.verde{
+  background-color: #0f9d58;
+}
+.danger{
+  background-color: #f44336;
+}
+.pulpe{
+  background-color: #9c27b0;
+}
+.pinker{
+  background-color: #e91e63;
+}
+.orange{
+  background-color: #ff9800;
+}
+.blue{
+  background-color: #03a9f4;
+}
+.black{
+  background-color:black;
+}
+.yellow{
+  background-color: #ffeb3b;
+}
