@@ -18,5 +18,5 @@ $UpdateProd = ("UPDATE eventoscalendar
 
     WHERE id='".$idEvento."' ");
 $result = mysqli_query($con, $UpdateProd);
-print_r($UpdateProd);
+
 ?>
