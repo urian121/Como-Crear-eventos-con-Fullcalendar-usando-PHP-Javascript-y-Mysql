@@ -26,10 +26,18 @@ include('config.php');
 <div id='calendar'></div>
 -->
 
-
-<div id="mi_calendario">
-  <?php  include('calendario.php'); ?>
+<div class="container">
+  <div class="row">
+    <div class="col">
+     <div id="respuesta">  </div>
+    </div>
 </div>
+</div>
+
+
+<div id='calendar'></div>
+
+
 
 <?php  
   include('modalNuevoEvento.php');
@@ -73,7 +81,7 @@ $(document).ready(function() {
       var F_final = moment(valorFechaFin, "DD-MM-YYYY").subtract(1, 'days').format('DD-MM-YYYY'); //Le resto 1 dia
       $('input[name=fecha_fin').val(F_final);  
 
-      },
+    },
       
       events: [
         <?php
@@ -116,6 +124,22 @@ $(document).ready(function() {
       });
     },
 
+//Moviendo Evento
+eventDrop: function (event, delta) {
+  var idEvento = event._id;
+  var start = (event.start.format('DD-MM-YYYY'));
+  var end = (event.end.format("DD-MM-YYYY"));
+
+    $.ajax({
+        url: 'drag_drop_evento.php',
+        data: 'start=' + start + '&end=' + end + '&idEvento=' + idEvento,
+        type: "POST",
+        success: function (response) {
+        //  msjEvento("Felicitaciones, el evento se ha modificado correctamente.");
+          $("#respuesta").html(response) ;
+        }
+    });
+},
 
 //Modificar Evento 
  eventClick:function(event){
@@ -127,7 +151,10 @@ $(document).ready(function() {
 
   $("#modalUpdateEvento").modal();
 
+  msjEvento("Felicitaciones, el evento fue eliminado correctamente.");
+
   //$("#calendar").fullCalendar("updateEvent", event);
+  $("#calendar").fullCalendar("updateEvent", event);
 },
 
   
@@ -135,6 +162,11 @@ $(document).ready(function() {
 });
 
 
+
+function msjEvento(message) {
+      $("#respuesta").html("<div class='alert alert-success' role='alert'>"+message+"</div>");
+    setInterval(function() { $(".alert-success").fadeOut(); }, 3000);
+}
 
 //Registrar Evento con la Magia de AJAX
 $('#addEvento').click(function(e){
@@ -147,15 +179,35 @@ $.ajax({
     data: $("#formEvento").serialize(),
     success: function(datos)
     {
-
     $("#exampleModal").modal('hide');
     $('body').removeClass('modal-open');
-    //$("#mi_calendario").load("calendario.php");
-     // $("#listClientes").load("listClientes.php"); //Cargo nuevamenta la lista de Clientes, pero ya actualizada.
-     // $("#formEvento")[0].reset(); //Limpio todos los input de mi formulario
+    $("#formEvento")[0].reset(); //Limpio todos los input de mi formulario
+
+    msjEvento("Felicitaciones, evento registrado correctamente."); 
     }
+  });
 });
+
+
+//Actualizar Evento
+$('#updateEvento').click(function(e){
+  e.preventDefault();
+
+url = "UpdateEvento.php";
+$.ajax({
+    type: "POST",
+    url: url,
+    data: $("#formEventoUpdate").serialize(),
+    success: function(datos)
+    {
+    $("#modalUpdateEvento").modal('hide');
+    $('body').removeClass('modal-open');
+    
+    msjEvento("Felicitaciones, el evento fue actualizado correctamente.");
+    }
+  });
 });
+
 
 });
 

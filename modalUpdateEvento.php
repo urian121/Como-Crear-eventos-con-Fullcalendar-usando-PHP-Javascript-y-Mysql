@@ -8,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-  <form name="formEvento" id="formEvento" action="" class="form-horizontal" method="POST">
+  <form name="formEventoUpdate" id="formEventoUpdate" action="" class="form-horizontal" method="POST">
     <input type="hidden" class="form-control" name="idEvento" id="idEvento">
 		<div class="form-group">
 			<label for="evento" class="col-sm-12 control-label">Nombre del Evento</label>
@@ -69,7 +69,7 @@
     </div>
 		
 	   <div class="modal-footer">
-      	<button type="submit" class="btn btn-success" id="addEvento">Guardar Cambios de mi Evento</button>
+      	<button type="submit" class="btn btn-success" id="updateEvento">Guardar Cambios de mi Evento</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
     	</div>
 	</form>
