@@ -23,15 +23,16 @@ include('config.php');
 
 <div class="container m-5">
   <div class="row">
-    <div class="col">
-     <div id="respuesta">  </div>
+    <div class="col msjs">
+      <?php
+        include('msjs.php');
+      ?>
     </div>
   </div>
 </div>
 
 
 <div id="calendar"></div>
-
 
 
 <?php  
@@ -48,7 +49,6 @@ include('config.php');
 <script type="text/javascript" src="js/moment.min.js"></script>	
 <script type="text/javascript" src="js/fullcalendar.min.js"></script>
 <script src='locales/es.js'></script>
-<script type="text/javascript" src="js/acciones.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -97,7 +97,7 @@ $(document).ready(function() {
 eventRender: function(event, element) {
     element
       .find(".fc-content")
-      .prepend("<span style='color:#333'; class='closeon material-icons'>&#xe5cd;</span>");
+      .prepend("<span id='btnCerrar'; class='closeon material-icons'>&#xe5cd;</span>");
     
     //Eliminar evento
     element.find(".closeon").on("click", function() {
@@ -113,7 +113,12 @@ eventRender: function(event, element) {
             data: {id:event._id},
             success: function(datos)
             {
-              
+              $(".alert-danger").show();
+
+              setTimeout(function () {
+                $(".alert-danger").slideUp(500);
+              }, 3000); 
+
             }
         });
       }
@@ -132,8 +137,7 @@ eventDrop: function (event, delta) {
         data: 'start=' + start + '&end=' + end + '&idEvento=' + idEvento,
         type: "POST",
         success: function (response) {
-        //  msjEvento("Felicitaciones, el evento se ha modificado correctamente.");
-          $("#respuesta").html(response);
+         // $("#respuesta").html(response);
         }
     });
 },
@@ -147,15 +151,22 @@ eventClick:function(event){
     $('input[name=fecha_fin').val(event.end.format("DD-MM-YYYY"));
 
     $("#modalUpdateEvento").modal();
-
-    msjEvento("Felicitaciones, el evento fue Modificado correctamente.");
   },
 
-  
 
   });
+
+
+//Oculta mensajes de Notificacion
+  setTimeout(function () {
+    $(".alert").slideUp(300);
+  }, 3000); 
+
+
 });
+
 </script>
+
 
 <!--------- WEB DEVELOPER ------>
 <!--------- URIAN VIERA   ----------->

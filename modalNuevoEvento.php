@@ -7,7 +7,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-  <form name="formEvento" id="formEvento" action="" class="form-horizontal" method="POST">
+  <form name="formEvento" id="formEvento" action="nuevoEvento.php" class="form-horizontal" method="POST">
 		<div class="form-group">
 			<label for="evento" class="col-sm-12 control-label">Nombre del Evento</label>
 			<div class="col-sm-10">
@@ -27,47 +27,30 @@
       </div>
     </div>
 
-    <div class="col-md-12" id="grupoRadio">
-      <label class="orange">
-        <input type="radio" name="color_evento" id="color_evento" value="orange" checked>
-        <div class="layer"></div>
-        <div class="button"><span></span></div>
-      </label>
+  <div class="col-md-12" id="grupoRadio">
+  
+  <input type="radio" name="color_evento" id="orange" value="#FF5722" checked>
+  <label for="orange" class="circu" style="background-color: #FF5722;"> </label>
 
-      <label class="amber">
-        <input type="radio" name="color_evento" id="color_evento" value="amber">
-        <div class="layer"></div>
-        <div class="button"><span></span></div>
-      </label>
+  <input type="radio" name="color_evento" id="amber" value="#FFC107">  
+  <label for="amber" class="circu" style="background-color: #FFC107;"> </label>
 
-      <label class="lime">
-        <input type="radio" name="color_evento" id="color_evento" value="lime">
-        <div class="layer"></div>
-        <div class="button"><span></span></div>
-      </label>
+  <input type="radio" name="color_evento" id="lime" value="#8BC34A">  
+  <label for="lime" class="circu" style="background-color: #8BC34A;"> </label>
 
-      <label class="teal">
-        <input type="radio" name="color_evento" id="color_evento" value="teal">
-        <div class="layer"></div>
-        <div class="button"><span></span></div>
-      </label>
+  <input type="radio" name="color_evento" id="teal" value="#009688">  
+  <label for="teal" class="circu" style="background-color: #009688;"> </label>
 
-      <label class="blue">
-        <input type="radio" name="color_evento" id="color_evento" value="blue">
-        <div class="layer"></div>
-        <div class="button"><span></span></div>
-      </label>
+  <input type="radio" name="color_evento" id="blue" value="#2196F3">  
+  <label for="blue" class="circu" style="background-color: #2196F3;"> </label>
 
-      <label class="indigo">
-        <input type="radio" name="color_evento" id="color_evento" value="indigo">
-        <div class="layer"></div>
-        <div class="button"><span></span></div>
-      </label>
+  <input type="radio" name="color_evento" id="indigo" value="#9c27b0">  
+  <label for="indigo" class="circu" style="background-color: #9c27b0;"> </label>
 
-    </div>
+</div>
 		
 	   <div class="modal-footer">
-      	<button type="submit" class="btn btn-success" id="addEvento">Guardar Evento</button>
+      	<button type="submit" class="btn btn-success">Guardar Evento</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
     	</div>
 	</form>

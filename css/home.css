@@ -2,10 +2,6 @@
   max-width: 900px;
   margin: 0 auto;
 }
-.closeon {
-  border-radius: 5px;
-}
-
 
 
 /****************/
@@ -13,69 +9,43 @@ input {
   display: none;
 }
 
-.button {
-  display: inline-block;
-  position: relative;
-  width: 50px;
-  height: 50px;
-  margin: 10px;
+
+.fc-content{
+  color: #fff !important;
+}
+
+
+
+#btnCerrar{
+  color:crimson;
+  padding: 5px;
+  background: #8888;
+  border-radius: 25px;
+  font-size: 17px;
+  font-weight: 600;
+}
+#btnCerrar:hover{
+  cursor: pointer;
+  background-color: #333;
+}
+
+
+
+.circu{
+  padding: 25px;
+  background: #ccc;
+  border-radius: 50px;
+}
+
+#grupoRadio label:hover{
   cursor: pointer;
 }
 
-.button span {
-  display: block;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
-  background: #eeeeee;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  transition: ease .3s;
+#grupoRadio input[type="radio"]:checked + label {
+  border: 3px solid #ccc !important;  
 }
 
-.button span:hover {
-  padding: 10px !important;
-}
 
-.orange .button span {
-  background: #FF5722;
-}
-
-.amber .button span {
-  background: #FFC107;
-}
-
-.lime .button span {
-  background: #8BC34A;
-}
-
-.teal .button span {
-  background: #009688;
-}
-
-.blue .button span {
-  background: #2196F3;
-}
-
-.indigo .button span {
-  background: #3F51B5;
-}
-
-.layer {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: transparent;
-  /*transition: ease .3s;*/
-  z-index: -1;
+.activado input[type=radio]:checked + label {
+  border: 3px solid #555 !important;  
 }

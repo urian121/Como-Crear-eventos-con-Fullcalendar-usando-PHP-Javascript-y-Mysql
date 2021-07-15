@@ -29,4 +29,6 @@ $InsertNuevoEvento = "INSERT INTO eventoscalendar(
   )";
 $resultadoNuevoEvento = mysqli_query($con, $InsertNuevoEvento);
 
+header("Location:index.php?e=1");
+
 ?>
