@@ -20,8 +20,9 @@ include('config.php');
   $resulEventos = mysqli_query($con, $SqlEventos);
 
 ?>
+<div class="mt-5"></div>
 
-<div class="container m-5">
+<div class="container">
   <div class="row">
     <div class="col msjs">
       <?php
@@ -29,7 +30,14 @@ include('config.php');
       ?>
     </div>
   </div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+  <h3 class="text-center" id="title">Como crear un Calendario de Eventos con PHP y MYSQL</h3>
+  </div>
 </div>
+</div>
+
 
 
 <div id="calendar"></div>

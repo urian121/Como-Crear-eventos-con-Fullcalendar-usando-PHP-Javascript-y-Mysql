@@ -16,7 +16,6 @@ $fecha_fin1        = strtotime($seteando_f_final."+ 1 days");
 $fecha_fin         = date('Y-m-d', ($fecha_fin1));  
 $color_evento      = $_REQUEST['color_evento'];
 
-
 $UpdateProd = ("UPDATE eventoscalendar 
     SET evento ='$evento',
         fecha_inicio ='$fecha_inicio',
